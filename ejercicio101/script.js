@@ -20,8 +20,8 @@ console.log("Precio Tulip: " + precioTulip + "€ | Stock total: " + stockTulip 
 console.log("El valor total de las flores es: " + totalPrecio +"€")
 console.log("------------------------------------------------------------------------");
 
-alert("Precio Rosa: " + precioRosa + "€ | Stock total: " + stockRosa + " | Valor de todo el stock de rosas: " + precioStockRosa + "€" +
-      "Precio Lirio: " + precioLirio + "€ | Stock total: " + stockLirio + " | Valor de todo el stock de rosas: " + precioStockLirio + "€" +
-      "Precio Tulip: " + precioTulip + "€ | Stock total: " + stockTulip + " | Valor de todo el stock de rosas: " + precioStockTulip + "€" +
+alert("Precio Rosa: " + precioRosa + "€ | Stock total: " + stockRosa + " | Valor de todo el stock de rosas: " + precioStockRosa + "€ " +
+      "Precio Lirio: " + precioLirio + "€ | Stock total: " + stockLirio + " | Valor de todo el stock de rosas: " + precioStockLirio + "€ " +
+      "Precio Tulip: " + precioTulip + "€ | Stock total: " + stockTulip + " | Valor de todo el stock de rosas: " + precioStockTulip + "€ " +
       "El valor total de las flores es: " + totalPrecio + "€"
      );
