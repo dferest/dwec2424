@@ -13,12 +13,20 @@
     <script>
         var nombre;
         document.getElementById("p1").innerHTML=nombre;
-        nombre = Belén;
+        nombre = "Belen";
         document.getElementById("p2").innerHTML=nombre;
-        var pais = "España",
-            nacimiento = 1990,
-            mayoriaEdad = 1990 + 18;
-        document.getElementById("p3").innerHTML="Belén es mayor de edad desde: " + mayoriaEdad;
+
+        var pais = "España";
+        var nacimiento = 1990;
+        var mayoriaEdad = nacimiento + 18;
+        var boda = "2023";
+
+        console.log(typeof(pais));
+        console.log(typeof(nacimiento));
+        console.log(typeof(boda));
+
+        nombre += " Jiménez";
+        console.log(nombre);
     </script>
     
 </body>
