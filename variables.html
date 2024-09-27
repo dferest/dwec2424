@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables en Javascript</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <script>
+        var nombre;
+        document.getElementById("p1").innerHTML=nombre;
+        nombre = Belén;
+        document.getElementById("p2").innerHTML=nombre;
+        var pais = "España",
+            nacimiento = 1990,
+            mayoriaEdad = 1990 + 18;
+        document.getElementById("p3").innerHTML="Belén es mayor de edad desde: " + mayoriaEdad;
+    </script>
+    
+</body>
+</html>
