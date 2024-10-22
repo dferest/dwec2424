@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscamos números impares</title>
+</head>
+<body>
+    <div>
+        <p id="impares">
+
+        </p>
+    </div>
+    <script>
+        const imparObjeto={ // Como tercera opción, ejecutamos el código pero esta vez usando una función flecha.
+            consulta: (nmr1, nmr2) => {
+                for (i = nmr1; nmr2>=i ; i++){
+                    if (i%2 === 1){
+                        
+                        console.log(`${i} es impar`);
+                    }
+                }
+                return console.log("Función ejecutada");
+            }
+            
+        }
+        nmr1 = Number(prompt("Introduce un número: "));
+        nmr2 = Number(prompt("Introduce un número mayor al anteriormente introducido: "));
+        if(nmr2 > nmr1){
+            imparObjeto.consulta(nmr1, nmr2);
+        }else{
+            imparObjeto.consulta(nmr2, nmr1);
+        } if (nmr1 === nmr2){ //Control de errores por si da el mismo número en ambos prompt.
+            alert("No puedo sacarte impares con dos numeros iguales.");
+        };
+        
+        //En esta función, imprimimos los numeros impares pasando el bucle por cada uno de los números. INEFICIENTE.
+        function impar(nmr1, nmr2){
+            for (i = nmr1; nmr2>=i ; i++){
+                if (i%2 === 1){
+                    
+                    console.log(`${i} es impar`);
+                }
+            }
+        }
+        
+
+        imparFlecha = (nmr1, nmr2) => {
+            if(nmr1%2 === 1){
+                for (i = nmr1; nmr2>=i; i += 2){
+                    alert(`${i} es impar`);
+                }
+            } else{
+                nnmr1 = nmr1 + 1
+                for (i = nnmr1; nmr2>=i; i += 2){
+                    alert(`${i} es impar`);
+                }
+            }
+            return `${this.i}`;
+        }
+
+        //En esta función, solo utilizamos el bucle para que pase por los números impares, haciendo una comparación inicial en un IF.
+        function impar2(nmr1,nmr2){
+            if(nmr1%2 === 1){
+                for (i = nmr1; nmr2>=i; i += 2){
+                    alert(`${i} es impar`);
+                }
+            } else{
+                nnmr1 = nmr1 + 1
+                for (i = nnmr1; nmr2>=i; i += 2){
+                    alert(`${i} es impar`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
