@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            width: 1200px;
+            margin: 20px auto;
+        }
+        form{
+            border-style: groove;
+            border-radius: 10px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <title>Adivinar número</title>
+</head>
+<body>
+    <div>
+        <h1>Introduce aquí un número</h1><br>
+        <input type="text" name="prod" id="inputNmr"><br>
+        <button id="btnTest" onclick="testNumero()">Probar</button>
+        <p id="textoInfo"></p>
+        <p id="textIntentos"></p>    
+    </div>
+    <script>
+        let adivinar = Math.ceil(Math.random()*100);
+        let adivinado = false;
+        let intentosUsuario = 0;    
+        function testNumero(){
+            let intento = document.getElementById("inputNmr").value;
+            if(intento == adivinar){
+                intentosUsuario ++;
+                document.getElementById("textoInfo").innerHTML = `El número era el ${adivinar}. Lo has adivinado en ${intentosUsuario} intentos.`;
+            }else{
+                intentosUsuario ++;
+                if(intento < adivinar){
+                    document.getElementById("textoInfo").innerHTML = `El número es mayor que ${intento}`;
+                }else{
+                    document.getElementById("textoInfo").innerHTML = `El número es menor que ${intento}`;
+                }
+            }
+            const intentosTextUsuario = document.getElementById("textIntentos");
+            intentosTextUsuario.innerHTML = `Llevas ${intentosUsuario} intentos.`;
+        };
+    </script>
+</body>
+</html>
