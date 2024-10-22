@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma y Media</title>
+</head>
+<body>
+    
+    <script>
+        function conseguirSuma(suma = 0, contador = 0){
+            nmr = Number (prompt("Introduce un número... (Negativo para terminar)"));
+            if (nmr < 0){
+                alert(`La suma es: ${suma}`);
+                operar(suma, contador);
+            } else{
+                suma = suma + nmr;
+                contador += 1;
+                conseguirSuma(suma, contador);
+            }
+        }
+        function operar(suma, contador){
+            alert("La media de la operación es: " + suma/contador); 
+        }
+        conseguirSuma();
+    </script>
+</body>
+</html>
