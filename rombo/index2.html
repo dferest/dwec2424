@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rombo 2</title>
+</head>
+<body>
+    <div id="rombo" style="text-align: center; color:red; font-size:2rem;">
+
+    </div>
+    <script>
+        let maxRombo = 7;
+        let pRombo = document.getElementById("rombo");
+
+        for (let i = 1; i <= maxRombo; i += 2) {
+            let numSpace = (maxRombo - i) / 2;
+            if(i == maxRombo){
+                pRombo.innerHTML += "&nbsp;".repeat(numSpace) + "*".repeat(i) + "<br>";
+            }else {
+                pRombo.innerHTML += "&nbsp;".repeat(numSpace) + "*".repeat(i) + "<br>";
+            }
+            
+        }
+
+        for (let j = maxRombo-2; j >=1; j-=2){
+            let numSpace = (maxRombo - j) / 2;
+            if (j == 1){
+                pRombo.innerHTML += "&nbsp;".repeat(numSpace) + "*".repeat(j);
+            }else{
+                pRombo.innerHTML += "&nbsp;".repeat(numSpace) + "*".repeat(j) + "<br>";
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

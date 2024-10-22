@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rombo 3</title>
+    <!-- Este ejercicio está resuelto antes de la resolución del día 15/10/2024. Envio esta versión para que veas lo que trabajé y no lo que copié. -->
+</head>
+<body>
+    <div id="rombo" style="text-align: center; color:red; font-size:3rem; margin-top: 150px;">
+
+    </div>
+    <script>
+        let maxRombo = Number(prompt("¿Cuanto quieres que sea el máximo de tu rombo?")); //El usuario indica el número máximo de asteriscos que quiere.
+        let pRombo = document.getElementById("rombo"); // Obtenemos el div con ID rombo.
+
+        //Creamos la parte de arriba del rombo, incluida la linea más larga del rombo.
+        for (let astSup = 1; astSup <= maxRombo; astSup += 2) { //El p
+                let numSpace = (maxRombo - astSup) / 2; //El numero de espacios siempre será la mitad de los caracteres que haya en la linea con más asteriscos. Para corregir los espacios de cada línea restamos los asteriscos que pintamos.
+                pRombo.innerHTML += "$".repeat(numSpace) + "*".repeat(astSup) + "$".repeat(numSpace) + "<br>";
+            }
+            
+        //Formamos la parte de abajo del rombo.
+        for (let astInf = maxRombo-2; astInf >=1; astInf-=2){
+                let numSpace = (maxRombo - astInf) / 2;
+                pRombo.innerHTML += "$".repeat(numSpace) + "*".repeat(astInf) + "$".repeat(numSpace) + "<br>";
+        }
+
+    </script>
+</body>
+</html>

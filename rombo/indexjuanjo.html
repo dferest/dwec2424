@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lienzo"></div>
+    <script>
+        let lienzo = document.getElementById("lienzo");
+        let nmrLineas = Number(prompt("Introduce el número de líneas"));
+        //Parte superior
+        for(let fila = 0; fila<=nmrLineas; fila++){
+            let asteriscos = ""
+            let espacios = ""
+            for(let esp = 0; esp<nmrLineas-fila; esp++){
+                espacios+="&nbsp&nbsp"
+            }
+            for(let ast = 0; ast< 2*fila-1; ast++){
+                asteriscos +="*"
+            }
+            lienzo.innerHTML = lienzo.innerHTML+espacios+asteriscos+"<br>";
+        }
+        
+        //Parte inferior
+        for (let fila = nmrLineas-1; fila >=0; fila--){
+            let asteriscos = ""
+            let espacios = ""
+            for(let esp = 0; esp<nmrLineas-fila; esp++){
+                espacios+="&nbsp&nbsp"
+            }
+            for(let ast = 0; ast< 2*fila-1; ast++){
+                asteriscos +="*"
+            }
+        }
+    </script>
+</body>
+</html>

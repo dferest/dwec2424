@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rombo</title>
+</head>
+<body>
+    <div id="rombo"></div>
+    <script>
+        let maxRombo = 7;
+        let pRombo = document.getElementById("rombo");
+
+        function sumaCosas(cosa, cantidad) {
+            let cadena = "";
+            for (let i = 0; i < cantidad; i++) {
+                cadena += cosa;
+            }
+            return cadena;
+        }
+
+        for (let i = 1; i <= maxRombo; i += 2) {
+            let numSpace = (maxRombo - i) / 2;
+            let espacios = sumaCosas("&nbsp;", numSpace);
+            let asteriscos = sumaCosas("*", i);
+            pRombo.innerHTML += espacios + asteriscos + "<br>";
+        }
+
+        // Parte inferior del rombo
+        for (let j = maxRombo - 2; j >= 1; j -= 2) {
+            let numSpace = (maxRombo - j) / 2;
+            let espacios = sumaCosas("&nbsp;", numSpace);
+            let asteriscos = sumaCosas("*", j);
+            pRombo.innerHTML += espacios + asteriscos + (j === 1 ? "" : "<br>");
+        }
+    </script>
+</body>
+</html>
