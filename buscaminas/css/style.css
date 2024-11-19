@@ -2,7 +2,19 @@ body{
     text-align: center;
     margin: 20px auto;
     width: 1500px;
-    background-color: rgb(212, 212, 212);
+    background-image: url('../img/background.png');
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
 }
 
 #selector{
@@ -15,14 +27,9 @@ body{
 }
 
 #container button{
+    text-align: center;
     width: 50px;
     height: 50px;
-    margin: none;
-    padding: none;
-    color: rgb(83, 83, 83);
+    color: rgb(255, 0, 0);
 
-}
-
-#container button:hover{
-    color: rgb(51, 51, 51);
 }
