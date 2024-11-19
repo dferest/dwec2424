@@ -2,6 +2,7 @@ body{
     text-align: center;
     margin: 20px auto;
     width: 1500px;
+    background-color: rgb(212, 212, 212);
 }
 
 #selector{
@@ -18,4 +19,10 @@ body{
     height: 50px;
     margin: none;
     padding: none;
+    color: rgb(83, 83, 83);
+
+}
+
+#container button:hover{
+    color: rgb(51, 51, 51);
 }
