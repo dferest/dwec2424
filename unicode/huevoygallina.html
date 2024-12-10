@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            margin: 50px auto;
+            width: 1200px;
+            background-color: gray;
+            color: whitesmoke;
+            font-size: 1.5rem;
+        }
+    </style>
+    <title>El huevo o la gallina</title>
+</head>
+<body>
+    <h1>El &#129370 o la &#128020</h1>
+    <button onclick="comparar()">Comparación</button>
+    <p id="respuesta"></p>
+    <script>
+        comparar = () => alert(`Va antes ${["🥚", "🐔"].sort()[0]}`); 
+    </script>
+</body>
+</html>
