@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            text-align: center;
+            margin: 200px auto;
+            background-color: gray;
+            color: white;
+            font-size: 1.5rem;
+        }
+    </style>
+    <title>Tempo y filter</title>
+</head>
+<body>
+    
+    <p id="tempo">60</p>
+    <p id="cosasM"></p>
+
+    <script>
+        // Array días
+        let diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+        
+        // Filter dias con "M"
+        let conM = diasSemana.filter((dia) => {return (dia.charAt(0) == "M")});
+
+        // Temporizador
+        let segs = 60;
+        let tempo = document.getElementById("tempo");
+        let textoM = document.getElementById("cosasM");
+        
+        let atras = setInterval(() => { //Con funcion anonima porque no necesitamos usarla en ningun lado.
+            segs--; 
+            tempo.innerHTML = segs.toLocaleString('es-ES', {minimumIntegerDigits: 2});
+            if (segs <= 0){
+                clearInterval(atras);
+                textoM.innerHTML = conM;
+                tempo.innerHTML = "00";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
