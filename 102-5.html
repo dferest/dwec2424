@@ -12,13 +12,8 @@
             width: 500px;
             height: 200px;
             margin: 20px auto;
-            padding-top: 50px;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+            margin-left: 1300px;
+            padding-top: 100px;
         }
     </style>
     <title>Ejercicio 102: Parte 5</title>
@@ -27,14 +22,6 @@
     <h1>Agenda de Contactos</h1>
     <div id="notif">
         <p id="notifText"></p>
-    </div>
-
-    <div id="buttons">
-        <button onclick="mostrarPrimero()">Mostrar Primer Contacto</button>
-        <button onclick="mostrarUltimo()">Mostrar Último Contacto</button>
-        <button onclick="mostrarTodos()">Mostrar Todos los Contactos</button>
-        <button onclick="newContact()">Añadir Nuevo Contacto</button>
-        <button onclick="salir()">Salir</button>
     </div>
 
     <script>
@@ -78,17 +65,39 @@
 
         function mostrarTodos() {
             if (contactos.length > 0) {
-                let listadoContactos = contactos.map(contacto => contacto.nombre).join('<br>');
+                let listadoContactos = contactos.map(c => c.nombre).join('<br>');
                 document.getElementById("notifText").innerHTML = `Lista de contactos:<br>${listadoContactos}`;
             } else {
                 document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
             }
         }
 
-        function salir() {
-            document.getElementById("notifText").innerHTML = "Saliendo del programa...";
-            document.getElementById("buttons").style.display = "none"; // Ocultar botones al salir
+        function mostrarMenu() {
+            let opcion = prompt("Elige una opción:\n1. Mostrar primer contacto (primero)\n2. Mostrar último contacto (último)\n3. Mostrar todos los contactos (todos)\n4. Añadir un nuevo contacto (nuevo)\n5. Salir del programa o VER LA OPCION SELECCIONADA (salir)");
+
+            switch(opcion) {
+                case "1":
+                    mostrarPrimero();
+                    break;
+                case "2":
+                    mostrarUltimo();
+                    break;
+                case "3":
+                    mostrarTodos();
+                    break;
+                case "4":
+                    newContact();
+                    break;
+                case "5":
+                    alert("Saliendo del programa...");
+                    return; 
+                default:
+                    alert("Opción no válida.");
+            }
+            mostrarMenu();
         }
+
+        mostrarMenu();
     </script>
 </body>
 </html>
