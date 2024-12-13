@@ -21,7 +21,7 @@
             cursor: pointer;
         }
     </style>
-    <title>Ejercicio 102: Parte 5</title>
+    <title>Agenda de Contactos</title>
 </head>
 <body>
     <h1>Agenda de Contactos</h1>
@@ -34,6 +34,7 @@
         <button onclick="mostrarUltimo()">Mostrar Último Contacto</button>
         <button onclick="mostrarTodos()">Mostrar Todos los Contactos</button>
         <button onclick="newContact()">Añadir Nuevo Contacto</button>
+        <button onclick="ordenarContactos()">Ordenar Contactos</button>
         <button onclick="salir()">Salir</button>
     </div>
 
@@ -78,16 +79,38 @@
 
         function mostrarTodos() {
             if (contactos.length > 0) {
-                let listadoContactos = contactos.map(contacto => contacto.nombre).join('<br>');
+                let listadoContactos = contactos.map(c => c.nombre).join('<br>');
                 document.getElementById("notifText").innerHTML = `Lista de contactos:<br>${listadoContactos}`;
             } else {
                 document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
             }
         }
 
+        function ordenarContactos() {
+            let criterio = prompt("¿Cómo deseas ordenar los contactos?\n1. Por nombre\n2. Por teléfono\n3. Por correo electrónico");
+
+            switch (criterio) {
+                case "1":
+                    contactos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+                    document.getElementById("notifText").innerHTML = "Contactos ordenados por nombre.";
+                    break;
+                case "2":
+                    contactos.sort((a, b) => a.telefono.localeCompare(b.telefono));
+                    document.getElementById("notifText").innerHTML = "Contactos ordenados por teléfono.";
+                    break;
+                case "3":
+                    contactos.sort((a, b) => a.correo.localeCompare(b.correo));
+                    document.getElementById("notifText").innerHTML = "Contactos ordenados por correo electrónico.";
+                    break;
+                default:
+                    document.getElementById("notifText").innerHTML = "Opción no válida para ordenar.";
+                    break;
+            }
+        }
+
         function salir() {
             document.getElementById("notifText").innerHTML = "Saliendo del programa...";
-            document.getElementById("buttons").style.display = "none"; // Ocultar botones al salir
+            document.getElementById("buttons").style.display = "none";
         }
     </script>
 </body>
