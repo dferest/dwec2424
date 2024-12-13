@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+        }
+        #notif{
+            background-color: aqua;
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+            margin-left: 1300px;
+            padding-top: 100px;
+        }
+    </style>
+    <title>Ejercicio 102: Parte 4</title>
+</head>
+<body>
+    <h1>Agenda de Contactos</h1>
+    <div id="notif">
+        <p id="notifText"></p>
+    </div>
+
+    <button id="btnAñadir" onclick="newContact()">Añadir Contacto</button>
+    <button id="btnPrim" onclick="mostrarPrimero()">Mostrar primero</button>
+    <button id="btnUlt" onclick="mostrarUltimo()">Mostrar Último</button>
+    <script>
+        let contactos = [ // Array de contactos
+            { nombre: "Maxwell Wright", telefono: "01917196495", correo: "Curabitus.egestas.nunc@nonummyac.co.uk" },
+            { nombre: "Raja Villareal", telefono: "08663982895", correo: "posuere.vulputate@sed.com" },
+            { nombre: "Helen Richards", telefono: "08001111", correo: "libero@convallis.edu" }
+        ];
+
+        console.log(contactos);
+
+        function newContact() {
+            let nom = prompt("Introduce el nombre y apellidos del contacto nuevo de la agenda.");
+            let tlf = prompt("¿Cuál es el teléfono de esta persona?");
+            let mail = prompt("Por último. ¿Cuál es su email?");
+
+            // Verificación de datos
+            if (nom && tlf && mail) {
+                let contactonuevo = { nombre: nom, telefono: tlf, correo: mail };
+                contactos.push(contactonuevo);
+                document.getElementById("notifText").innerHTML = `Contacto agregado: ${contactonuevo.nombre}`;
+            } else {
+                document.getElementById("notifText").innerHTML = "No se agregaron todos los datos. El contacto no fue añadido.";
+            }
+        }
+
+        function mostrarPrimero() {
+            if (contactos.length > 0) {
+                let primerContacto = contactos[0];
+                document.getElementById("notifText").innerHTML = `El primer contacto es: ${primerContacto.nombre}`;
+            } else {
+                document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
+            }
+        }
+
+        function mostrarUltimo() {
+            if (contactos.length > 0) {
+                let ultimoContacto = contactos[contactos.length - 1];
+                document.getElementById("notifText").innerHTML = `El último contacto es: ${ultimoContacto.nombre}`;
+            } else {
+                document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
+            }
+        }
+    </script>
+</body>
+</html>
