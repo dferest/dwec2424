@@ -12,11 +12,16 @@
             width: 500px;
             height: 200px;
             margin: 20px auto;
-            margin-left: 1300px;
-            padding-top: 100px;
+            padding-top: 50px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
-    <title>Ejercicio 102: Parte 4</title>
+    <title>Ejercicio 102: Parte 5</title>
 </head>
 <body>
     <h1>Agenda de Contactos</h1>
@@ -24,24 +29,26 @@
         <p id="notifText"></p>
     </div>
 
-    <button id="btnAñadir" onclick="newContact()">Añadir Contacto</button>
-    <button id="btnPrim" onclick="mostrarPrimero()">Mostrar primero</button>
-    <button id="btnUlt" onclick="mostrarUltimo()">Mostrar Último</button>
+    <div id="buttons">
+        <button onclick="mostrarPrimero()">Mostrar Primer Contacto</button>
+        <button onclick="mostrarUltimo()">Mostrar Último Contacto</button>
+        <button onclick="mostrarTodos()">Mostrar Todos los Contactos</button>
+        <button onclick="newContact()">Añadir Nuevo Contacto</button>
+        <button onclick="salir()">Salir</button>
+    </div>
+
     <script>
-        let contactos = [ // Array de contactos
+        let contactos = [ 
             { nombre: "Maxwell Wright", telefono: "01917196495", correo: "Curabitus.egestas.nunc@nonummyac.co.uk" },
             { nombre: "Raja Villareal", telefono: "08663982895", correo: "posuere.vulputate@sed.com" },
             { nombre: "Helen Richards", telefono: "08001111", correo: "libero@convallis.edu" }
         ];
-
-        console.log(contactos);
 
         function newContact() {
             let nom = prompt("Introduce el nombre y apellidos del contacto nuevo de la agenda.");
             let tlf = prompt("¿Cuál es el teléfono de esta persona?");
             let mail = prompt("Por último. ¿Cuál es su email?");
 
-            // Verificación de datos
             if (nom && tlf && mail) {
                 let contactonuevo = { nombre: nom, telefono: tlf, correo: mail };
                 contactos.push(contactonuevo);
@@ -67,6 +74,20 @@
             } else {
                 document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
             }
+        }
+
+        function mostrarTodos() {
+            if (contactos.length > 0) {
+                let listadoContactos = contactos.map(contacto => contacto.nombre).join('<br>');
+                document.getElementById("notifText").innerHTML = `Lista de contactos:<br>${listadoContactos}`;
+            } else {
+                document.getElementById("notifText").innerHTML = "No hay contactos en la lista.";
+            }
+        }
+
+        function salir() {
+            document.getElementById("notifText").innerHTML = "Saliendo del programa...";
+            document.getElementById("buttons").style.display = "none"; // Ocultar botones al salir
         }
     </script>
 </body>
